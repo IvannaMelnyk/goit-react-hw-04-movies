@@ -1,8 +1,9 @@
 import Navigation from '../Navigation/Navigation';
+import styles from './AppBar.module.css';
 
-export default function AppBar() {
+export default function Appbar() {
   return (
-    <header>
+    <header className={styles.Searchbar}>
       <Navigation />
     </header>
   );

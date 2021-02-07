@@ -1,0 +1,106 @@
+/* Navigation and Cast and Reviews pages */
+
+.card_right_description {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  padding: 0 40px 0 40px;
+  letter-spacing: 1px;
+  margin: 10px 0 10px 0;
+  line-height: 20px;
+}
+
+.card_right_description li {
+  display: inline;
+  color: grey;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0 40px 0 0;
+}
+
+.card_right_description h3 {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-align: left;
+  font-size: 20px;
+  margin: 30px 0 0 0;
+  padding: 0 0 0 40px;
+  letter-spacing: 1px;
+}
+
+.card_right_description p {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  padding: 0 40px 0 40px;
+  letter-spacing: 1px;
+  margin: 10px 0 10px 0;
+  line-height: 20px;
+}
+
+.card_box_item {
+  margin: 10px;
+  padding: 20px;
+  width: 185px;
+  height: 260px;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.card_box_item img {
+  width: 160px;
+  height: 220px;
+  margin: auto;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.9);
+}
+
+.card_box_item h3 {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+.card_box_item p {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 10px;
+  padding: 0;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  color: #2a363b;
+  font-size: 18px;
+}
+
+.activeLink {
+  color: red;
+}

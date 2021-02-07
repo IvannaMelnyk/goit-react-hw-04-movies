@@ -1,40 +1,50 @@
 import { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import AppBar from './components/AppBar';
-import Container from './components/Container';
-import Loader from './components/Loader';
 
-const Home = lazy(() =>
-  import('./views/HomePage' /*webpackChunkName: "HomeView" */),
+import { Switch, Route } from 'react-router-dom';
+import AppBar from './components/AppBar/AppBar';
+import Container from './components/Container/Container';
+
+const HomeView = lazy(() =>
+  import(`./pages/HomeView/HomeView` /* webpackChunkName: "home-view" */),
 );
-const Movies = lazy(() =>
-  import('./views/MoviesVeiw' /*webpackChunkName: "MoviesView" */),
+const MoviesView = lazy(() =>
+  import(`./pages/MoviesView/MoviesView` /* webpackChunkName: "movies-view" */),
 );
-const FullInfo = lazy(() =>
-  import('./views/FullInfoView' /*webpackChunkName: "FullInfoMovieView" */),
+const NotFoundView = lazy(() =>
+  import(
+    `./pages/NotFoundView/NotFoundView` /* webpackChunkName: "not-found-page-view" */
+  ),
+);
+const MovieDetailsView = lazy(() =>
+  import(
+    `./pages/MovieDetailsView/MovieDetailsView` /* webpackChunkName: "movie-details-view" */
+  ),
 );
 
 export default function App() {
   return (
     <Container>
       <AppBar />
-      <Suspense fallback={<Loader />}>
+
+      <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/" exact>
-            <Home />
+            <HomeView />
           </Route>
 
           <Route path="/movies" exact>
-            <Movies />
+            <MoviesView />
           </Route>
 
           <Route path="/movies/:movieId">
-            <FullInfo />
+            <MovieDetailsView />
+          </Route>
+
+          <Route>
+            <NotFoundView />
           </Route>
         </Switch>
       </Suspense>
-      <ToastContainer autoClose={2000} />
     </Container>
   );
 }

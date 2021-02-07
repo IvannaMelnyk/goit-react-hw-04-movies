@@ -1,37 +1,44 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import s from './SearchBar.module.css';
+import PropTypes from 'prop-types';
 
-export default function SearchBar({ onHandleSubmit }) {
+import styles from './SearchBar.module.css';
+
+export default function SearchBar({ onSubmit }) {
   const [query, setQuery] = useState('');
 
-  const onSubmit = e => {
-    e.preventDefault();
+  const handleChange = event => {
+    setQuery(event.target.value.toLowerCase());
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
     if (query.trim() === '') {
-      return toast.error('Please enter search query');
+      toast.error('Please enter a valid query search');
+      return;
     }
-    onHandleSubmit(query);
+
+    onSubmit(query);
     setQuery('');
   };
 
   return (
-    <section className={s.SearchBar}>
-      <form className={s.searchForm} onSubmit={onSubmit}>
-        <button type="submit" className={s.button}>
-          <span className={s.label}>Search</span>
-        </button>
-
-        <input
-          className={s.input}
-          type="text"
-          autoComplete="off"
-          autoFocus
-          value={query}
-          onChange={({ target }) => setQuery(target.value)}
-          placeholder="Search films"
-        />
-      </form>
-    </section>
+    <form onSubmit={handleSubmit} className={styles.search_form}>
+      <input
+        className={styles.search_form_input}
+        type="text"
+        autoComplete="off"
+        autoFocus
+        value={query}
+        onChange={handleChange}
+        placeholder="Search films"
+      />
+      <button className={styles.search_form_button} type="submit"></button>
+    </form>
   );
 }
+
+SearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

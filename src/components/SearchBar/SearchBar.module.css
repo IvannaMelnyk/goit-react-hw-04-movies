@@ -1,24 +1,4 @@
-.SearchBar {
-  top: 0;
-  left: 0;
-  position: sticky;
-  z-index: 1100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 64px;
-  margin-top: 2px;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  color: #fff;
-  background-color: #414b52;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.1),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-}
-
-.searchForm {
+.search_form {
   display: flex;
   align-items: center;
   width: 100%;
@@ -26,13 +6,16 @@
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.button {
+.search_form_button {
   display: inline-block;
   width: 48px;
   height: 48px;
-  border: 0;
+  border: 1 solid rgb(15, 8, 8);
+  border-radius: 5px;
   background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
   background-size: 40%;
   background-repeat: no-repeat;
@@ -43,35 +26,23 @@
   outline: none;
 }
 
-.button:hover {
+.search_form_button:hover {
   opacity: 1;
 }
 
-.label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  clip-path: inset(50%);
-  border: 0;
-}
-
-.input {
+.search_form_input {
   display: inline-block;
   width: 100%;
   font: inherit;
-  font-size: 20px;
-  border: none;
+  font-size: 25px;
+  border: 1 solid rgb(15, 8, 8);
+  border-radius: 5px;
   outline: none;
   padding-left: 4px;
   padding-right: 4px;
-  color: rgb(58 59 71);
+  color: rgb(grey);
 }
-
-.input::placeholder {
+.search_form_input::placeholder {
   font: inherit;
   font-size: 18px;
 }

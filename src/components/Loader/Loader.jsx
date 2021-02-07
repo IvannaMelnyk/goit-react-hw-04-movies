@@ -1,20 +1,17 @@
-import React from 'react';
 import Loader from 'react-loader-spinner';
 import s from './Loader.module.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
-function LoaderSpinner() {
+export default function Spinner() {
   return (
     <div className={s.wrapper}>
       <Loader
-        className="Loader"
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        timeout={3000}
+        className="spinner"
+        type="ThreeDots"
+        color="#8B0000"
+        height={80}
+        width={80}
       />
     </div>
   );
 }
-
-export default LoaderSpinner;
